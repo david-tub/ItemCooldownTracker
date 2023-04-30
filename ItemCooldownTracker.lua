@@ -14,7 +14,13 @@ ICDT.currentItem = nil
 ICDT.tooltipActive = false
 ICDT.tooltipCurrentControl = 0
 
+ICDT.serverResetTimes = {
+	["EU Megaserver"] = 3,
+	["NA Megaserver"] = 10,
+	["PTS"] = 10, -- TODO: check if this is also the case when the EU characters are loaded
+}
 
+-------- HELPER FUNCITONS --------
 -- returns a table with all numbers in range (including from and to)
 local function range(from , to)
 	local result = {}
@@ -25,12 +31,34 @@ local function range(from , to)
 end
 
 
+function ICDT.tableMerge(t1, t2)
+	for k,v in pairs(t2) do
+	   table.insert(t1, v)
+	end 
+	return t1
+ end
+ 
+ 
+-- calculates the difference between local and UTC time (in seconds)
+-- the value is the offset to convert a timestamp of a specific local time into a timestamp with same time in UTC
+function ICDT.getDifferenceFromUTC()
+	local tmp_time = os.time()
+	-- local date object
+	local d1 = os.date("*t",  tmp_time)
+	-- UTC date object
+	local d2 = os.date("!*t", tmp_time)
+	d1.isdst = false
+	-- calculate difference (d1-d2) 
+	local zone_diff = os.difftime(os.time(d1), os.time(d2))
+	return zone_diff
+end
+--------
+
+
 -- List of all trackable items
 -- NOTE: add new items here in the beginning of the list to display them ingame in the end of the dropdown!
 ICDT.trackableItemList = {
 	-- PVP
-	-- Rewards of the Worthy (March 2023 (Update 37): dropped, is now reset together with the global daily reset)
-	--[[
 	["transmutRewardCyrodiil"] = {
 		name = ICDT.loc.items.transmutRewardCyrodiil,
 		itemIds = {134618},
@@ -40,9 +68,6 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
-	--]]
-	-- March 2023 (Update 37: dropped, is now reset together with the global daily reset)
-	--[[
 	["fragCyrodiil"] = {
 		name = ICDT.loc.items.fragCyrodiil,
 		itemIds = {138783},
@@ -61,10 +86,7 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
-	--]]
 
-	-- Thief Guild (March 2023 (Update 37): dropped, is now reset together with the global daily reset)
-	--[[
 	["dropRemainsSilent"] = {
 	-- https://en.uesp.net/wiki/Online:Remains-Silent
 		name = ICDT.loc.items.dropRemainsSilent,
@@ -79,7 +101,6 @@ ICDT.trackableItemList = {
 			onlyInOutlawZone = true,
 		},
 	},
-	--]]
 	
 	-- Southern Elsweyr
 	["styleShieldOfSenchal"] = {
@@ -100,9 +121,6 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
-	
-	-- March 2023 (Update 37: dropped, is now reset together with the global daily reset)
-	--[[
 	["styleNewMoon"] = {
 		name = ICDT.loc.items.styleNewMoon,
 		itemIds = range(156609, 156622),
@@ -111,7 +129,6 @@ ICDT.trackableItemList = {
 			onlyInZone = {1146},
 		},
 	},
-	--]]
 	
 	-- Greymoor
 	["styleBlackreachVanguard"] = {
@@ -237,6 +254,8 @@ ICDT.trackableItemList = {
 local function playerInitAndReady()
     zo_callLater(function() ICDT.initialize() end, 1000)
 	EVENT_MANAGER:UnregisterForEvent(ICDT.appName, EVENT_PLAYER_ACTIVATED)
+	
+	-- set hooks for item interactions
 	if ICDT.savedVars.preventOpening then
 		ZO_PreHook('ZO_InventorySlot_DoPrimaryAction', ICDT.primaryActionPreHook)
 	elseif ICDT.savedVars.preventOpeningRestrict then
@@ -263,6 +282,7 @@ local function onAddonLoaded(eventCode, addonName)
 		return -1
 		-- Fallback: return the -1 version if AddOnManager was not read properly
 	end
+
 	--Set the version dynamically
 	ICDT.version = tostring(GetAddonVersionFromManifest())
 
@@ -288,7 +308,7 @@ local function onAddonLoaded(eventCode, addonName)
 		end
 	end
 	-- March 2023
-	-- with Update 37 several trackable items need to be removed / deactivated
+	-- with Update 37 several trackable items need to be removed / deactivated temporary
 	-- go over trackedItems from savedVars and remove all entries that are no longer trackable/supported
 	for key, _ in pairs(ICDT.savedVars.trackedItems) do
 		if not ICDT.has_index(ICDT.trackableItemList, key) then
@@ -317,6 +337,9 @@ function ICDT.initialize()
 	
 	-- check for notification
 	ICDT.checkForNotification()
+
+	-- calculate time difference to UTC times
+	ICDT.zoneDiffUTC = ICDT.getDifferenceFromUTC()
 end
 
 
@@ -453,6 +476,11 @@ function ICDT.checkForNotification()
 		-- show setup info dialog
 		ICDT.showDialogSimple("InitialSetup", ICDT.displayedAppName, ICDT.loc.dialogs.initialSetupBody, function() LAM:OpenToPanel(ICDT.SettingsPanel) ICDT.savedVars.firstStart = false end, nil)
 	end
+
+	-- check if server reset time is known (otherwise, addon cannot work probably)
+	if not ICDT.serverResetTimes[GetWorldName()] then
+		ICDT.showDialogSimple("NoDailyResetTime", ICDT.displayedAppName, ICDT.loc.dialogs.noServerResetTime, nil, nil)
+	end
 end
 
 ------------------------------------
@@ -585,54 +613,45 @@ function ICDT.updateTimestamp(key, itemName)
 end
 
 
--- check if the cooldown is still active for given key
 function ICDT.isCooldownActive(key)
-	-- regular cooldown of 1200 Minutes (20 hours)
-	local cooldown_m = 1200
-	local timestamp = ICDT.savedVars.trackedItems[key]
-	if type(timestamp) ~= "number" then
+	local timestamp_loot = ICDT.savedVars.trackedItems[key]
+	if type(timestamp_loot) ~= "number" then
 		-- no timestamp recorded
 		return false
 	end
-	local minutesLeft = cooldown_m - math.floor(GetDiffBetweenTimeStamps(GetTimeStamp(), timestamp)/60)
-	if minutesLeft < 0 then
-		return false, 0
+
+	local serverResetTime = ICDT.serverResetTimes[GetWorldName()] or 0
+	local localDate = os.date("*t")
+	-- timestamp of a specific time of a day in local time zone + difference between UTC -> timestamp of a specific time of a day in UTC
+	local daily_timestamp_1 = os.time({day=localDate.day, month=localDate.month, year=localDate.year, hour=serverResetTime, min=0 ,sec=0}) + ICDT.zoneDiffUTC
+	
+	local next_reset_time
+	local previous_reset_time
+
+	-- if daily_timestamp_1 is bigger than now, the specific time was not reached today, so this is the next server reset
+	local timestamp_now = os.time(os.date("*t"))
+	if daily_timestamp_1 > timestamp_now then
+    	next_reset_time = daily_timestamp_1
+    	previous_reset_time = daily_timestamp_1 - 86400 -- (minus 1 day)
 	else
-		return true, minutesLeft
+    	next_reset_time = daily_timestamp_1 + 86400 -- (plus 1 day)
+    	previous_reset_time = daily_timestamp_1
 	end
-end
 
-
--- print all active cooldowns into the chat
-function ICDT.printCooldownsOLD()
-	-- regular cooldown of 1200 Minutes (20 hours)
-	local cooldown_m = 1200
-	for key, timestamp in pairs(ICDT.savedVars.trackedItems) do
-		d(ICDT.chatBegin .. ICDT.trackableItemList[key].name .. ":")
-		if type(timestamp) ~= "number" then
-			-- no timestamp -> not recorded so far
-			d(ICDT.chatBegin .. ICDT.loc.chat.noRecords)
-		else
-			-- print cooldown status
-			local minutesLeft = cooldown_m - math.floor(GetDiffBetweenTimeStamps(GetTimeStamp(), timestamp)/60)
-			local h = math.floor(minutesLeft/60)
-			local m = math.floor(minutesLeft-(h*60))
-			
-			if minutesLeft < 0 then
-				d(ICDT.chatBegin .. "|c00FF00" .. ICDT.loc.cooldownExpired)
-			else
-				d(ICDT.chatBegin .. "|cFF0000" .. ICDT.loc.cooldownActive .. "|r\n" .. string.format(ICDT.loc.chat.cooldownActiveTime, h,m))
-			end
-		end
-		d("---------------------------------")
+	if timestamp_loot > previous_reset_time then
+		-- cooldon is still active
+		-- the user has to wait until next reset time
+		local secondsLeft = next_reset_time - timestamp_now
+		local minutesLeft = math.floor(secondsLeft/60)
+		return true, minutesLeft
+	else
+		return false, 0
 	end
 end
 
 
 -- print only active active cooldowns into the chat
 function ICDT.printCooldowns()
-	-- regular cooldown of 1200 Minutes (20 hours)
-	local cooldown_m = 1200
 	for key, timestamp in pairs(ICDT.savedVars.trackedItems) do
 		local isCooldownActive, minutesLeft = ICDT.isCooldownActive(key)
 		if isCooldownActive then
@@ -715,7 +734,7 @@ function ICDT.showDialogCustom(dialogName, dialogInfoObject)
 	local globalDialogName = ICDT.appName .. dialogName
 	
 	ESO_Dialogs[globalDialogName] = dialogInfo
-	dialogReference = ZO_Dialogs_ShowDialog(globalDialogName)
+	local dialogReference = ZO_Dialogs_ShowDialog(globalDialogName)
 	return globalDialogName, dialogReference
 end
 
@@ -884,14 +903,11 @@ end
 
 
 
--- API functions of FCO Item Saver integration
+------- API functions of FCO Item Saver integration -------
 
---[[
--- returns a table containing all itemIds (containers) that are potential relevant for the prevention of opening
-(independet from user setting)
---]]
+-- returns a table containing all itemIds (containers) that are potential relevant for the prevention of opening (independet from user setting)
 function ICDT.GetRelevantItemIds()
-	resultTable = {}
+	local resultTable = {}
 	for key, data in pairs(ICDT.trackableItemList) do
 		if data and data.containers then
 			ICDT.tableMerge(resultTable, data.containers)
@@ -926,15 +942,8 @@ function ICDT.GetItemCooldown(itemId)
 end
 
 
-function ICDT.tableMerge(t1, t2)
-   for k,v in pairs(t2) do
-      table.insert(t1, v)
-   end 
-   return t1
-end
 
 
 
 -- START HERE
 EVENT_MANAGER:RegisterForEvent(ICDT.appName, EVENT_ADD_ON_LOADED, onAddonLoaded)
-
