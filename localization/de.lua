@@ -87,6 +87,6 @@ ICDT.loc.dialogs.noServerResetTime = "ACHTUNG: Das Addon kann den Server, auf de
 
 
 -- Universal
-ICDT.loc.cooldownExpired = "Cooldown abgelaufen!"
-ICDT.loc.cooldownActive = "Cooldown noch aktiv!"
+ICDT.loc.cooldownExpired = "Kein Cooldown"
+ICDT.loc.cooldownActive = "Cooldown aktiv!"
 ICDT.loc.cooldownShort = "%d Stunden und %d Minuten verbleibend"

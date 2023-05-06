@@ -87,6 +87,6 @@ ICDT.loc.dialogs.noServerResetTime = "WARNING: The addon cannot detect the serve
 
 
 -- Universal
-ICDT.loc.cooldownExpired = "Cooldown expired!"
-ICDT.loc.cooldownActive = "Cooldown still active!"
+ICDT.loc.cooldownExpired = "No cooldown"
+ICDT.loc.cooldownActive = "Cooldown active!"
 ICDT.loc.cooldownShort = "%d hours and %d minutes left"
