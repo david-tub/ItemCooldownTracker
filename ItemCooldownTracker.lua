@@ -7,7 +7,17 @@ ICDT.displayedAppName = "|cd5b526Item|r Cooldown Tracker"
 ICDT.version = "" -- will be set according to the the verion in manifest file
 ICDT.author = "DeadSoon"
 ICDT.website = "https://www.esoui.com/downloads/info2823-ItemCooldownTracker.html"
-ICDT.chatBegin = "[ICT]: "
+ICDT.chatBegin = "[ICT]"
+ICDT.color = {
+	colTrash     = "777777", -- Trash Gray
+    colYellow    = "FFFF00" ,-- yellow
+    colArcane    = "3689ef", -- blue (Rare)
+    colWhite     = "FFFFFF", -- white
+    colRed       = "FF0000", -- Red
+    colLegendary = "d5b526", -- gold (TheShit)
+    colGreen     = "00FF00", -- green
+	colOrange    = "fd7a1a", -- orange
+  }
 
 ICDT.currentItem = nil
 
@@ -22,6 +32,42 @@ ICDT.serverResetTimes = {
 }
 
 -------- HELPER FUNCITONS --------
+-- colorize text
+function ICDT.colorizeText(text, color)
+	if type(color) == "string" then
+		local code = ICDT.color.colWhite
+		
+		if string.lower(color) == "gray" then
+			code = ICDT.color.colTrash
+		elseif string.lower(color) == "yellow" then
+			code = ICDT.color.colYellow
+		elseif string.lower(color) == "blue" then
+			code = ICDT.color.colArcane
+		elseif string.lower(color) == "white" then
+			code = ICDT.color.colWhite
+		elseif string.lower(color) == "red" then
+			code = ICDT.color.colRed
+		elseif string.lower(color) == "gold" then
+			code = ICDT.color.colLegendary
+		elseif string.lower(color) == "green" then
+			code = ICDT.color.colGreen
+		elseif string.lower(color) == "orange" then
+			code = ICDT.color.colOrange
+		end
+		
+		return "|c" .. code .. tostring(text) .. "|r"
+	end
+end
+
+
+-- send addon messages to the chat
+function ICDT.printToChat(text)
+	local prefix_colorized = ICDT.colorizeText(ICDT.chatBegin, "white")
+
+	d(prefix_colorized .. ": " .. text)
+end
+
+
 -- returns a table with all numbers in range (including from and to)
 local function range(from , to)
 	local result = {}
@@ -38,8 +84,8 @@ function ICDT.tableMerge(t1, t2)
 	end 
 	return t1
  end
- 
- 
+
+
 -- calculates the difference between local and UTC time (in seconds)
 -- the value is the offset to convert a timestamp of a specific local time into a timestamp with same time in UTC
 function ICDT.getDifferenceFromUTC()
@@ -479,7 +525,7 @@ function ICDT.buildDropdown()
 	ICDT.dropdownItemsValues = {}
 	for key, item in pairs(ICDT.trackableItemList) do
 		if ICDT.savedVars.trackedItems[key] then
-			table.insert(ICDT.dropdownItemsChoices, "|c00FF00" .. item.name)
+			table.insert(ICDT.dropdownItemsChoices, ICDT.colorizeText(item.name, "green"))
 		else
 			table.insert(ICDT.dropdownItemsChoices, item.name)
 		end
@@ -636,8 +682,8 @@ function ICDT.updateTimestamp(key, itemName)
 		-- save current timestamp
 		ICDT.savedVars.trackedItems[key] = GetTimeStamp()
 		-- print message to chat
-		d(ICDT.chatBegin .. "|c00FF00" .. ICDT.loc.chat.lootRecorded .. ": ")
-		d(ICDT.chatBegin .. itemName)
+		ICDT.printToChat(ICDT.colorizeText(ICDT.loc.chat.lootRecorded, "green"))
+		ICDT.printToChat(itemName)
 		
 		-- request prioritized saving of the savedVars
 		GetAddOnManager():RequestAddOnSavedVariablesPrioritySave(ICDT.appName)
@@ -682,17 +728,33 @@ function ICDT.isCooldownActive(key)
 end
 
 
--- print only active active cooldowns into the chat
+-- check if any cooldown is active and print to chat
 function ICDT.printCooldowns()
+	local minutesLeftPrint
+	d("-----------------------------")
+
+	-- check all tracked items
+	-- print all names where cooldown is active
 	for key, timestamp in pairs(ICDT.savedVars.trackedItems) do
 		local isCooldownActive, minutesLeft = ICDT.isCooldownActive(key)
 		if isCooldownActive then
-			local h, m = ICDT.FormatMinutes(minutesLeft)
-			d(ICDT.chatBegin .. ICDT.trackableItemList[key].name .. ":")
-			d(ICDT.chatBegin .. "|cFF0000" .. ICDT.loc.cooldownActive .. "|r\n" .. string.format(ICDT.loc.chat.cooldownActiveTime, h,m))
-			d("---------------------------------")
+			-- since all cooldowns are the same (until next daily server reset), just use the last one
+			minutesLeftPrint = minutesLeft
+			ICDT.printToChat(ICDT.trackableItemList[key].name)
 		end
 	end
+
+	if minutesLeftPrint then
+		-- at least one item has cooldown
+		local h, m = ICDT.FormatMinutes(minutesLeftPrint)
+		ICDT.printToChat(ICDT.colorizeText(ICDT.loc.cooldownActive, "red"))
+		ICDT.printToChat(string.format(ICDT.loc.chat.cooldownActiveTime, h,m))
+	else
+		-- no active cooldown
+		ICDT.printToChat(ICDT.colorizeText(ICDT.loc.cooldownExpired, "green"))
+	end
+	
+	d("-----------------------------")
 end
 
 
@@ -792,7 +854,7 @@ function ICDT.useItemPreHook(bagId, slotIndex)
 	if minutesLeft > 0 then
 		-- cooldown is active -> show warning dialog
 		local h, m = ICDT.FormatMinutes(minutesLeft)
-		local body = ICDT.loc.dialogs.useItemBody1 .. " (" .. string.format(ICDT.loc.cooldownShort, h,m) .. ")\n\n|cFF0000" .. ICDT.loc.dialogs.useItemBody2
+		local body = ICDT.loc.dialogs.useItemBody1 .. " (" .. string.format(ICDT.loc.cooldownShort, h,m) .. ")\n\n" .. ICDT.colorizeText(ICDT.loc.dialogs.useItemBody2, "red")
 		ICDT.showDialogSimple("UseItem", ICDT.displayedAppName, body, function() CallSecureProtected("UseItem", bagId, slotIndex) end, nil)
 		
 		-- stops the original "UseItem" call
@@ -820,7 +882,7 @@ function ICDT.primaryActionPreHook(inventorySlot)
 	if minutesLeft > 0 then
 		-- cooldown is active -> show warning dialog
 		local h, m = ICDT.FormatMinutes(minutesLeft)
-		local body = ICDT.loc.dialogs.useItemBody1 .. " (" .. string.format(ICDT.loc.cooldownShort, h,m) .. ")\n\n|cFF0000" .. ICDT.loc.dialogs.useItemBody2
+		local body = ICDT.loc.dialogs.useItemBody1 .. " (" .. string.format(ICDT.loc.cooldownShort, h,m) .. ")\n\n" .. ICDT.colorizeText(ICDT.loc.dialogs.useItemBody2, "red")
 		ICDT.showDialogSimple("UseItem", ICDT.displayedAppName, body, function() CallSecureProtected("UseItem", bagId, slotIndex) end, nil)
 		
 		-- stops the original call
@@ -911,13 +973,13 @@ function ICDT.preHookItemTooltip_OnUpdate()
 			if minutesLeft > 0 then
 				-- item is relevant and cooldown is still active
 				local h, m = ICDT.FormatMinutes(minutesLeft)
-				local textToAdd = "|cFF0000" .. ICDT.loc.cooldownActive .. "\n" .. string.format(ICDT.loc.cooldownShort, h,m) .. "|r"
+				local textToAdd = ICDT.colorizeText(ICDT.loc.cooldownActive, "red") .. "\n" .. string.format(ICDT.loc.cooldownShort, h,m)
 				ItemTooltip:AddLine(" ")
 				ZO_Tooltip_AddDivider(ItemTooltip)
 				ItemTooltip:AddLine(ICDT.displayedAppName .. ":\n" .. textToAdd, "", 1,1,1, CENTER, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_CENTER, true)
 			elseif minutesLeft == 0 then
 				-- item is relevant but cooldown is expired
-				local textToAdd = "|c00FF00" .. ICDT.loc.cooldownExpired .. "|r"
+				local textToAdd = ICDT.colorizeText(ICDT.loc.cooldownExpired, "green")
 				ItemTooltip:AddLine(" ")
 				ZO_Tooltip_AddDivider(ItemTooltip)
 				ItemTooltip:AddLine(ICDT.displayedAppName .. ":\n" .. textToAdd, "", 1,1,1, CENTER, MODIFY_TEXT_TYPE_NONE, TEXT_ALIGN_CENTER, true)
