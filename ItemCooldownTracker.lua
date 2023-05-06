@@ -14,10 +14,11 @@ ICDT.currentItem = nil
 ICDT.tooltipActive = false
 ICDT.tooltipCurrentControl = 0
 
+-- server reset times in UTC
 ICDT.serverResetTimes = {
 	["EU Megaserver"] = 3,
 	["NA Megaserver"] = 10,
-	["PTS"] = 10, -- TODO: check if this is also the case when the EU characters are loaded
+	["PTS"] = 10, -- Note: PTS has always reset time from NA server
 }
 
 -------- HELPER FUNCITONS --------
@@ -179,7 +180,7 @@ ICDT.trackableItemList = {
 		},
 	},
 	
-	--Blackwood
+	-- Blackwood
 	["styleBlackFinLegion"] = {
 		name = ICDT.loc.items.styleBlackFinLegion,
 		itemIds = range(171879, 171892),
@@ -242,6 +243,37 @@ ICDT.trackableItemList = {
 		itemIds = range(182555, 182568),
 		overwriteTimestamp = false,
 		containers = {188136},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+
+	-- Firesong (Galen)
+	["styleHouseMornard"] = {
+		name = ICDT.loc.items.styleHouseMornard,
+		itemIds = range(188325, 188338),
+		overwriteTimestamp = false,
+		containers = {190948, 190949},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+	["styleFiresong"] = {
+		name = ICDT.loc.items.styleFiresong,
+		itemIds = range(188308, 188321),
+		overwriteTimestamp = false,
+		containers = {190952},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+
+	-- Necrom (Telvanni)
+	["styleDeadKeeper"] = {
+		name = ICDT.loc.items.styleDeadKeeper,
+		itemIds = range(194514, 194527),
+		overwriteTimestamp = false,
+		containers = {197818, 197819},
 		conditions = {
 			onlyFromContainer = true,
 		},
