@@ -723,7 +723,7 @@ function ICDT.isCooldownActive(key)
 		local minutesLeft = math.floor(secondsLeft/60)
 		return true, minutesLeft
 	else
-		return false, 0
+		return false, 0 
 	end
 end
 
