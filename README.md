@@ -10,6 +10,5 @@ Some special items can drop only once a day. ESO has a server-dependent daily re
 
 
 ## Installation
-- Download project as zip file
-- unzip root folder to the game addon folder (by default \Documents\Elder Scrolls Online\live\AddOns)
-- rename the folder to "ItemCooldownTracker" (to get \Documents\Elder Scrolls Online\live\AddOns\ItemCooldownTracker\...)
+1. Download project as zip file
+2. Extract the subfolder "ItemCooldownTracker" to the game addon folder: \Documents\Elder Scrolls Online\live\AddOns\ItemCooldownTracker\ ...
