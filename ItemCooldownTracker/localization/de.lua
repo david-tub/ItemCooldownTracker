@@ -1,38 +1,32 @@
--- ADDON NAMEPSACE INITIALIZATION - NEVER REMOVE
-ICDT = {}
-ICDT.loc = {}
-
 -- GERMAN LANGUAGE LOCALIZATION
-
+ICDT.loc.suffix.publicDungeonFragment = " (OV Fragment)"
 
 -- Items
-ICDT.loc.items = {}
-ICDT.loc.items.transmutRewardCyrodiil = "1. PVP: Intakte Transmutationsgeode ('Gerechter Lohn')"
-ICDT.loc.items.fragCyrodiil = "1. PVP: Beweis des Arenagladiatoren (Cyrodiil)"
-ICDT.loc.items.fragImperialCity = "1. PVP: Meriten der Belagerung von Cyrodiil (Kaiserstadt)"
-ICDT.loc.items.dropRemainsSilent = "2. Misc: Beute von 'Schweigt-still' (Gesetzlosen-Unterschlupf)"
-ICDT.loc.items.styleShieldOfSenchal = "3. Dragonhold: Schilde von Senchal Stilseiten (Südliches Elsweyr)"
-ICDT.loc.items.styleDragonguard = "3. Dragonhold: Drachengarde Stilseiten (Gezeiteninsel)"
-ICDT.loc.items.styleNewMoon = "3. Dragonhold: Priester des Neuen Mondes Stilseiten (Gezeiteninsel)"
-ICDT.loc.items.styleBlackreachVanguard = "4. Greymoor: Schwarzweite-Vorhut Stilseiten (Westl. Himmelsrand)"
-ICDT.loc.items.styleGreymoor = "4. Greymoor: Graumoor Stilseiten (Westl. Himmelsrand)"
-ICDT.loc.items.styleArkthzandArmory = "5. Markarth: Waffenkammer von Arkthzand Stilseiten (Reik)"
-ICDT.loc.items.styleNighthollow = "5. Markarth: Nachttiefen Stilseiten (Reik)"
-ICDT.loc.items.styleWaywardGuardian = "5. Markarth: Unbezähmbare Hüter Stilseiten (Reik)"
-ICDT.loc.items.styleBlackFinLegion = "6. Blackwood: Schwarzflossen-Legion Stilseiten (Dunkelforst)"
-ICDT.loc.items.styleIvoryBrigade = "6. Blackwood: Elfenbeinbrigade Stilseiten (Dunkelforst)"
-ICDT.loc.items.styleHouseHexos = "7. Deadlands: Haus Hexos Stilseiten (Ferngrab)"
-ICDT.loc.items.styleFargraveGuardian = "7. Deadlands: Ferngrabwächter Stilseiten (Ferngrab)"
-ICDT.loc.items.styleAnnihilarch = "7. Deadlands: Auserwählten des Annihilarchen Stilseiten (Totenländer)"
-ICDT.loc.items.styleSteadfastSociety = "8. High Isle: Liga der Standhaften Stilseiten (Hochinsel)"
-ICDT.loc.items.styleSystresGuardian = "8. High Isle: Systren-Wächter Stilseiten (Hochinsel)"
-ICDT.loc.items.styleHouseMornard = "9. Firesong: Haus Mornard Stilseiten (Galen)"
-ICDT.loc.items.styleFiresong = "9. Firesong: Feuersang Stilseiten (Galen)"
-ICDT.loc.items.styleDeadKeeper = "10. Necrom: Hüter der Toten Stilseiten (Telvanni)"
+ICDT.loc.items.transmutRewardCyrodiil = ICDT.loc.prefix.pvp .. "Intakte Transmutationsgeode ('Gerechter Lohn')"
+ICDT.loc.items.fragCyrodiil = ICDT.loc.prefix.pvp .. "Beweis des Arenagladiatoren (Cyrodiil)"
+ICDT.loc.items.fragImperialCity = ICDT.loc.prefix.pvp .. "Meriten der Belagerung von Cyrodiil (Kaiserstadt)"
+ICDT.loc.items.dropRemainsSilent = ICDT.loc.prefix.misc .. "Beute von 'Schweigt-still' (Gesetzlosen-Unterschlupf)"
+ICDT.loc.items.styleShieldOfSenchal = ICDT.loc.prefix.dragonhold .. "Schilde von Senchal Stilseiten (Südliches Elsweyr)"
+ICDT.loc.items.styleDragonguard = ICDT.loc.prefix.dragonhold .. "Drachengarde Stilseiten (Gezeiteninsel)"
+ICDT.loc.items.styleNewMoon = ICDT.loc.prefix.dragonhold .. "Priester des Neuen Mondes Stilseiten (Gezeiteninsel)"
+ICDT.loc.items.styleBlackreachVanguard = ICDT.loc.prefix.greymoor .. "Schwarzweite-Vorhut Stilseiten (Westl. Himmelsrand)"
+ICDT.loc.items.styleGreymoor = ICDT.loc.prefix.greymoor .. "Graumoor Stilseiten (Westl. Himmelsrand)"
+ICDT.loc.items.styleArkthzandArmory = ICDT.loc.prefix.markarth .. "Waffenkammer von Arkthzand Stilseiten (Reik)"
+ICDT.loc.items.styleNighthollow = ICDT.loc.prefix.markarth .. "Nachttiefen Stilseiten (Reik)"
+ICDT.loc.items.styleWaywardGuardian = ICDT.loc.prefix.markarth .. "Unbezähmbare Hüter Stilseiten (Reik)"
+ICDT.loc.items.styleBlackFinLegion = ICDT.loc.prefix.blackwood .. "Schwarzflossen-Legion Stilseiten (Dunkelforst)"
+ICDT.loc.items.styleIvoryBrigade = ICDT.loc.prefix.blackwood .. "Elfenbeinbrigade Stilseiten (Dunkelforst)"
+ICDT.loc.items.styleHouseHexos = ICDT.loc.prefix.deadlands .. "Haus Hexos Stilseiten (Ferngrab)"
+ICDT.loc.items.styleFargraveGuardian = ICDT.loc.prefix.deadlands .. "Ferngrabwächter Stilseiten (Ferngrab)"
+ICDT.loc.items.styleAnnihilarch = ICDT.loc.prefix.deadlands .. "Auserwählten des Annihilarchen Stilseiten (Totenländer)"
+ICDT.loc.items.styleSteadfastSociety = ICDT.loc.prefix.highIsle .. "Liga der Standhaften Stilseiten (Hochinsel)"
+ICDT.loc.items.styleSystresGuardian = ICDT.loc.prefix.highIsle .. "Systren-Wächter Stilseiten (Hochinsel)"
+ICDT.loc.items.styleHouseMornard = ICDT.loc.prefix.firesong .. "Haus Mornard Stilseiten (Galen)"
+ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Feuersang Stilseiten (Galen)"
+ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Hüter der Toten Stilseiten (Telvanni)"
 
 
 -- Settings
-ICDT.loc.settings = {}
 ICDT.loc.settings.introDescription = "1. Wähle im Dropdown das Item das du tracken möchtest aus.\n2. Nutze die Buttons um das jeweilige Item zu tracken oder nicht mehr zu tracken.\n3. Wenn du nun das entsprechende Item einsammelst, speichert das Addon automatisch die aktuelle Zeit\n4. Ein Dialog wird dich warnen, wenn du versuchst, einen Behälter mit aktivem Cooldown zu öffnen.\n5. Nutze den Chat-Befehl '/ict' um die Cooldowns deiner Items zu überprüfen.\n\nKontaktiere mich gerne wenn du möchtest, dass ein bestimmtes Item zur Dropdown-Liste hinzugefügt werden soll. (Kommentar/PM auf ESOUI oder Discord: DeadSoon#9951)"
 ICDT.loc.settings.itemsToTrack = "Wähle das Element aus, dass getrackt werden soll:"
 ICDT.loc.settings.itemsToTrackTooltip = "Wähle im Dropdown das Element aus, das getrackt bzw. nicht getrackt werden soll."
@@ -72,14 +66,12 @@ ICDT.loc.settings.itemDescriptionDetailed =
 
 
 -- Chat output
-ICDT.loc.chat = {}
 ICDT.loc.chat.lootRecorded = "Getracktes Item eingesammelt!"
 ICDT.loc.chat.noRecords = "Nicht eingesammelt bis jetzt"
 ICDT.loc.chat.cooldownActiveTime = "Du musst noch %d Stunden und %d Minuten warten!"
 
 
 -- Dialogs
-ICDT.loc.dialogs = {}
 ICDT.loc.dialogs.initialSetupBody = "Bitte lasse dich kurz informieren, wie das Addon funktioniert. Standardmäßig ist das Tracking für alle unterstützten Gegenstände aktiviert.\n\nBestätige diesen Dialog um zu den Einstellungen zu springen."
 ICDT.loc.dialogs.useItemBody1 = "Achtung! Cooldown des Items ist noch aktiv!"
 ICDT.loc.dialogs.useItemBody2 = "Willst du diesen Behälter wirklich öffnen?"

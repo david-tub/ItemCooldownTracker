@@ -1,38 +1,58 @@
 -- ADDON NAMEPSACE INITIALIZATION - NEVER REMOVE
 ICDT = {}
 ICDT.loc = {}
+ICDT.loc.prefix = {}
+ICDT.loc.suffix = {}
+ICDT.loc.items = {}
+ICDT.loc.settings = {}
+ICDT.loc.chat = {}
+ICDT.loc.dialogs = {}
+
+-- fix strings
+ICDT.loc.prefix.pvp = "1. PVP: "
+ICDT.loc.prefix.misc = "2. Misc: "
+ICDT.loc.prefix.morrowind = "3. Morrowind: "
+ICDT.loc.prefix.summerset = "4. Summerset: "
+ICDT.loc.prefix.elsweyr = "5. Elsweyr: "
+ICDT.loc.prefix.dragonhold = "6. Dragonhold: "
+ICDT.loc.prefix.greymoor = "7. Greymoor: "
+ICDT.loc.prefix.markarth = "8. Markarth: "
+ICDT.loc.prefix.blackwood = "9. Blackwood: "
+ICDT.loc.prefix.deadlands = "10. Deadlands: "
+ICDT.loc.prefix.highIsle = "11. High Isle: "
+ICDT.loc.prefix.firesong = "12. Firesong: "
+ICDT.loc.prefix.necrom = "13. Necrom: "
+
 
 -- ENGLISH LANGUAGE LOCALIZATION
-
+ICDT.loc.suffix.publicDungeonFragment = " (PD Fragment)"
 
 -- Items
-ICDT.loc.items = {}
-ICDT.loc.items.transmutRewardCyrodiil = "1. PVP: Uncracked Transmutation Geode ('Rewards for the Worthy')"
-ICDT.loc.items.fragCyrodiil = "1. PVP: Arena Gladiator's Proof (Cyrodiil)"
-ICDT.loc.items.fragImperialCity = "1. PVP: Siege of Cyrodiil Merit (Imperial City)"
-ICDT.loc.items.dropRemainsSilent = "2. Misc: Loot from 'Remains-Silent' (Outlaw Refuges)"
-ICDT.loc.items.styleShieldOfSenchal = "3. Dragonhold: Shield of Senchal Style Pages (Southern Elsweyr)"
-ICDT.loc.items.styleDragonguard = "3. Dragonhold: Dragonguard Style Pages (Tideholm)"
-ICDT.loc.items.styleNewMoon = "3. Dragonhold: New Moon Priest Style Pages (Tideholm)"
-ICDT.loc.items.styleBlackreachVanguard = "4. Greymoor: Blackreach Vanguard Style Pages (Western Skyrim)"
-ICDT.loc.items.styleGreymoor = "4. Greymoor: Greymoor Style Pages (Western Skyrim)"
-ICDT.loc.items.styleArkthzandArmory = "5. Markarth: Arkthzand Armory Style Pages (Reach)"
-ICDT.loc.items.styleNighthollow = "5. Markarth: Nighthollow Style Pages (Reach)"
-ICDT.loc.items.styleWaywardGuardian = "5. Markarth: Wayward Guardian Style Pages (Reach)"
-ICDT.loc.items.styleBlackFinLegion = "6. Blackwood: Black Fin Legion Style Pages (Blackwood)"
-ICDT.loc.items.styleIvoryBrigade = "6. Blackwood: Ivory Brigade Style Pages (Blackwood)"
-ICDT.loc.items.styleHouseHexos = "7. DeadLands: House Hexos Style Pages (Fargrave)"
-ICDT.loc.items.styleFargraveGuardian = "7. Deadlands: Fargrave Guardian Style Pages (Fargrave)"
-ICDT.loc.items.styleAnnihilarch = "7. Deadlands: Annihilarch's Chosen Style Pages (Deadlands)"
-ICDT.loc.items.styleSteadfastSociety = "8. High Isle: Steadfast Society Style Pages (High Isle)"
-ICDT.loc.items.styleSystresGuardian = "8. High Isle: Systres Guardian Style Pages (High Isle)"
-ICDT.loc.items.styleHouseMornard = "9. Firesong: House Mornard Style Pages (Galen)"
-ICDT.loc.items.styleFiresong = "9. Firesong: Firesong Style Pages (Galen)"
-ICDT.loc.items.styleDeadKeeper = "10. Necrom: Dead Keeper Style Pages (Telvanni)"
+ICDT.loc.items.transmutRewardCyrodiil = ICDT.loc.prefix.pvp .. "Uncracked Transmutation Geode ('Rewards for the Worthy')"
+ICDT.loc.items.fragCyrodiil = ICDT.loc.prefix.pvp .. "Arena Gladiator's Proof (Cyrodiil)"
+ICDT.loc.items.fragImperialCity = ICDT.loc.prefix.pvp .. "Siege of Cyrodiil Merit (Imperial City)"
+ICDT.loc.items.dropRemainsSilent = ICDT.loc.prefix.misc .. "Loot from 'Remains-Silent' (Outlaw Refuges)"
+ICDT.loc.items.styleShieldOfSenchal = ICDT.loc.prefix.dragonhold .. "Shield of Senchal Style Pages (Southern Elsweyr)"
+ICDT.loc.items.styleDragonguard = ICDT.loc.prefix.dragonhold .. "Dragonguard Style Pages (Tideholm)"
+ICDT.loc.items.styleNewMoon = ICDT.loc.prefix.dragonhold .. "New Moon Priest Style Pages (Tideholm)"
+ICDT.loc.items.styleBlackreachVanguard = ICDT.loc.prefix.greymoor .. "Blackreach Vanguard Style Pages (Western Skyrim)"
+ICDT.loc.items.styleGreymoor = ICDT.loc.prefix.greymoor .. "Greymoor Style Pages (Western Skyrim)"
+ICDT.loc.items.styleArkthzandArmory = ICDT.loc.prefix.markarth .. "Arkthzand Armory Style Pages (Reach)"
+ICDT.loc.items.styleNighthollow = ICDT.loc.prefix.markarth .. "Nighthollow Style Pages (Reach)"
+ICDT.loc.items.styleWaywardGuardian = ICDT.loc.prefix.markarth .. "Wayward Guardian Style Pages (Reach)"
+ICDT.loc.items.styleBlackFinLegion = ICDT.loc.prefix.blackwood .. "Black Fin Legion Style Pages (Blackwood)"
+ICDT.loc.items.styleIvoryBrigade = ICDT.loc.prefix.blackwood .. "Ivory Brigade Style Pages (Blackwood)"
+ICDT.loc.items.styleHouseHexos = ICDT.loc.prefix.deadlands .. "House Hexos Style Pages (Fargrave)"
+ICDT.loc.items.styleFargraveGuardian = ICDT.loc.prefix.deadlands .. "Fargrave Guardian Style Pages (Fargrave)"
+ICDT.loc.items.styleAnnihilarch = ICDT.loc.prefix.deadlands .. "Annihilarch's Chosen Style Pages (Deadlands)"
+ICDT.loc.items.styleSteadfastSociety = ICDT.loc.prefix.highIsle .. "Steadfast Society Style Pages (High Isle)"
+ICDT.loc.items.styleSystresGuardian = ICDT.loc.prefix.highIsle .. "Systres Guardian Style Pages (High Isle)"
+ICDT.loc.items.styleHouseMornard = ICDT.loc.prefix.firesong .. "House Mornard Style Pages (Galen)"
+ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Firesong Style Pages (Galen)"
+ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Dead Keeper Style Pages (Telvanni)"
 
 
 -- Settings
-ICDT.loc.settings = {}
 ICDT.loc.settings.introDescription = "1. Select the item(s) you want to track/untrack from the dropdown list below.\n2. Click on the button to track or to untrack the selected item(s)\n3. When you collect a tracked item, the addon automatically logs the current time.\n4. A dialog will warn you if you try to open a container with active cooldown.\n5. Type '/ict' into the chat to see all cooldown times.\n\nFeel free to contact me if you want me to add another item(s) to the dropdown. (Comment/PM on ESOUI or Discord: DeadSoon#9951)"
 ICDT.loc.settings.itemsToTrack = "Select item(s) you want to track/untrack:"
 ICDT.loc.settings.itemsToTrackTooltip = "Select in the dropdown the item(s) you want to track or untrack via the buttons below."
@@ -72,14 +92,12 @@ ICDT.loc.settings.itemDescriptionDetailed =
 
 
 -- Chat output
-ICDT.loc.chat = {}
 ICDT.loc.chat.lootRecorded = "Tracked item collected!"
 ICDT.loc.chat.noRecords = "Not collected so far"
 ICDT.loc.chat.cooldownActiveTime = "You have to wait %d hours and %d minutes!"
 
 
 -- Dialogs
-ICDT.loc.dialogs = {}
 ICDT.loc.dialogs.initialSetupBody = "Please be briefly informed how the addon works. By default, tracking is enabled for all supported items.\n\nConfirm this dialog to jump to the settings."
 ICDT.loc.dialogs.useItemBody1 = "Attention! The cooldown of the item is still active!"
 ICDT.loc.dialogs.useItemBody2 = "Do you really want to open this container?"
