@@ -324,6 +324,150 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
+
+	-- PUBLIC DUNGEON FRAGMENTS
+	-- https://en.uesp.net/wiki/Online:Fragments#Public_Dungeon_Fragments
+
+	-- Morrowind
+	-- Dwarven Theodolite
+	["fragPdDwarven"] = {
+		name = ICDT.loc.prefix.morrowind .. zo_strformat("<<C:1>>", GetCollectibleName(1232)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = range(124660, 124666),
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {918},
+		},
+	},
+	-- Sixth House Robe
+	["fragPdSixthHouse"] = {
+		name = ICDT.loc.prefix.morrowind .. zo_strformat("<<C:1>>", GetCollectibleName(1230)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = range(124667, 124673),
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {919},
+		},
+	},
+
+	-- Summerset
+	-- Big-Eared Ginger Kitten
+	["fragPdBigEared"] = {
+		name = ICDT.loc.prefix.summerset .. zo_strformat("<<C:1>>", GetCollectibleName(4996)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = range(139450, 139456),
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1020},
+		},
+	},
+	-- Psijic Glowglobe
+	["fragPdPsijic"] = {
+		name = ICDT.loc.prefix.summerset .. zo_strformat("<<C:1>>", GetCollectibleName(5047)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = range(139457, 139463),
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1021},
+		},
+	},
+
+	-- Elsweyr
+	-- Grisly Mummy Tabby
+	["fragPdGrisly"] = {
+		name = ICDT.loc.prefix.elsweyr .. zo_strformat("<<C:1>>", GetCollectibleName(6381)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {147929},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1089},
+		},
+	},
+	-- Peryite Skeevemaster
+	["fragPdPeryite"] = {
+		name = ICDT.loc.prefix.elsweyr .. zo_strformat("<<C:1>>", GetCollectibleName(6292)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {147930},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1090},
+		},
+	},
+
+	-- Greymoor
+	-- Master Field Cartographer
+	["fragPdMasterField"] = {
+		name = ICDT.loc.prefix.greymoor .. zo_strformat("<<C:1>>", GetCollectibleName(7622)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = range(166700, 166706),
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1187},
+		},
+	},
+	-- Target Stone Husk (item)
+	["fragPdTargetStone"] = {
+		name = ICDT.loc.prefix.greymoor .. "'Target Stone Husk'" .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {166466},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1186},
+		},
+	},
+
+	-- Blackwood
+	-- Thrafey Debutante Gown
+	["fragPdThrafey"] = {
+		name = ICDT.loc.prefix.blackwood .. zo_strformat("<<C:1>>", GetCollectibleName(8888)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {178463},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1260},
+		},
+	},
+	-- Replica Zenithar Adytum Gate
+	["fragPdReplica"] = {
+		name = ICDT.loc.prefix.blackwood .. zo_strformat("<<C:1>>", GetCollectibleName(9523)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {178462},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1259},
+		},
+	},
+
+	-- High Isle
+	-- Coral Haj Mota_1 (same collectible but two different fragments)
+	["fragPdCoralHaj_1"] = {
+		name = ICDT.loc.prefix.highIsle .. zo_strformat("<<C:1>>", GetCollectibleName(9797)) .. ICDT.loc.suffix.publicDungeonFragment .. " 1/2",
+		itemIds = {188271},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1337},
+		},
+	},
+	-- Coral Haj Mota_2 (same collectible but two different fragments)
+	["fragPdCoralHaj_2"] = {
+		name = ICDT.loc.prefix.highIsle .. zo_strformat("<<C:1>>", GetCollectibleName(9797)) .. ICDT.loc.suffix.publicDungeonFragment .. " 2/2",
+		itemIds = {188200},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1338},
+		},
+	},
+
+	-- Necrom
+	-- Graht-Oak Squirrel_1 (same collectible but two different fragments)
+	["fragPdGrahtOak_1"] = {
+		name = ICDT.loc.prefix.necrom .. zo_strformat("<<C:1>>", GetCollectibleName(10912)) .. ICDT.loc.suffix.publicDungeonFragment .. " 1/2",
+		itemIds = {197649},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1415},
+		},
+	},
+	-- Graht-Oak Squirrel_2 (same collectible but two different fragments)
+	["fragPdGrahtOak_2"] = {
+		name = ICDT.loc.prefix.necrom .. zo_strformat("<<C:1>>", GetCollectibleName(10912)) .. ICDT.loc.suffix.publicDungeonFragment .. " 2/2",
+		itemIds = {198095},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1416},
+		},
+	},
+
 }
 
 
