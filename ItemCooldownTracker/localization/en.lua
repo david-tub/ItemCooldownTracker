@@ -50,6 +50,7 @@ ICDT.loc.items.styleSystresGuardian = ICDT.loc.prefix.highIsle .. "Systres Guard
 ICDT.loc.items.styleHouseMornard = ICDT.loc.prefix.firesong .. "House Mornard Style Pages (Galen)"
 ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Firesong Style Pages (Galen)"
 ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Dead Keeper Style Pages (Telvanni)"
+ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Kindred's Concord Style Pages (Telvanni)"
 
 
 -- Settings
@@ -88,7 +89,8 @@ ICDT.loc.settings.itemDescriptionDetailed =
 		"High Isle: |cd5b526Systres Guardian Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve) from quest giver 'Wayllod' in High Isle.\n\n" ..
 		"Firesong: |cd5b526House Mornard Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Juline Courcelles' or 'Druid Gastoc' in Galen.\n\n" ..
 		"Firesong: |cd5b526Firesong Style Pages|r\nYou have a chance to receive a style page by completing the daily quest (volcanic vents) from the quest giver 'Druid Aishabeh' in Galen.\n\n" ..
-		"Necrom: |cd5b526Dead Keeper Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Ordinator Tilena' or 'Ordinator Nelyn' in Telvanni.\n\n"
+		"Necrom: |cd5b526Dead Keeper Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Ordinator Tilena' or 'Ordinator Nelyn' in Telvanni.\n\n" ..
+		"Necrom: |cd5b526Kindred's Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quest from the quest giver 'Ordinator Tandasea' in Telvanni. Also, the stype pages can drop from bosses in 'Bastion Nymic'.\n\n"
 
 
 -- Chat output

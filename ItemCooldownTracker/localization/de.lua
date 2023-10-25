@@ -24,6 +24,7 @@ ICDT.loc.items.styleSystresGuardian = ICDT.loc.prefix.highIsle .. "Systren-Wäch
 ICDT.loc.items.styleHouseMornard = ICDT.loc.prefix.firesong .. "Haus Mornard Stilseiten (Galen)"
 ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Feuersang Stilseiten (Galen)"
 ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Hüter der Toten Stilseiten (Telvanni)"
+ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Konkordie der Sippe Stilseiten (Telvanni)"
 
 
 -- Settings
@@ -62,7 +63,8 @@ ICDT.loc.settings.itemDescriptionDetailed =
 		"High Isle: |cd5b526Systren-Wächter Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest (Gewölbe) vom Questgeber 'Wayllod' in Hochinsel abschließt.\n\n" ..
 		"Firesong: |cd5b526Haus Mornard Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Juline Courcelles' oder 'Druide Gastoc' in Galen abschließt.\n\n" ..
 		"Firesong: |cd5b526Feuersang Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest (Vulkanschlote) vom Questgeber 'Druidin Aishabeh' in Galen abschließt.\n\n" ..
-		"Necrom: |cd5b526Hüter der Toten Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Ordinatorin Tilena' oder 'Ordinator Nelyn' auf Telvanni abschließt.\n\n"
+		"Necrom: |cd5b526Hüter der Toten Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Ordinatorin Tilena' oder 'Ordinator Nelyn' auf Telvanni abschließt.\n\n" ..
+		"Necrom: |cd5b526Konkordie der Sippe Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest des Questgebers 'Ordinatorin Tandasea' auf Telvanni abschließt. Zusätzlich können die Stilseiten von Anführern in 'Bastion Nymon' droppen.\n\n"
 
 
 -- Chat output

@@ -213,7 +213,7 @@ ICDT.trackableItemList = {
 		overwriteTimestamp = false,
 		containers = {170225},
 		conditions = {
-			onlyFromContainer = true,
+			onlyFromContainer = true,	-- could also drop from Harrowstorms (*)
 		},
 	},
 	["styleWaywardGuardian"] = {
@@ -310,7 +310,7 @@ ICDT.trackableItemList = {
 		overwriteTimestamp = false,
 		containers = {190952},
 		conditions = {
-			onlyFromContainer = true,
+			onlyFromContainer = true,	-- could also drop from Vulkanos (*)
 		},
 	},
 
@@ -319,11 +319,23 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.styleDeadKeeper,
 		itemIds = range(194514, 194527),
 		overwriteTimestamp = false,
-		containers = {197818, 197819},
+		containers = {197819},
 		conditions = {
 			onlyFromContainer = true,
 		},
 	},
+	["styleKindred"] = {
+		name = ICDT.loc.items.styleKindred,
+		itemIds = range(194541, 194554),
+		overwriteTimestamp = false,
+		containers = {197818},
+		conditions = {
+			onlyFromContainer = true,	-- could also drop from bosses in Bastion Nymic (*)
+		},
+	},
+
+	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
+
 
 	-- PUBLIC DUNGEON FRAGMENTS
 	-- https://en.uesp.net/wiki/Online:Fragments#Public_Dungeon_Fragments
