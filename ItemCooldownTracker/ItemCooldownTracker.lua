@@ -110,7 +110,7 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.transmutRewardCyrodiil,
 		itemIds = {134618},
 		overwriteTimestamp = false,
-		containers = {134619, 145577, 181436, 184171, 190009, 194353},
+		containers = {134619, 145577, 181436, 184171, 190009, 194353, 204404},
 		conditions = {
 			onlyFromContainer = true,
 		},
