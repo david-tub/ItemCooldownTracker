@@ -3,8 +3,8 @@
 ## Author: DeadSoon
 ## APIVersion: 101040 101041
 ## SavedVariables: ItemCooldownTracker_SV
-## Version: 4.2
-## AddOnVersion: 42
+## Version: 4.3
+## AddOnVersion: 43
 ## IsLibrary: false
 ## DependsOn: LibAddonMenu-2.0
 
