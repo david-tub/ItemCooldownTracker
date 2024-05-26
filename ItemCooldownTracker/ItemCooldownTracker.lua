@@ -106,6 +106,7 @@ end
 -- NOTE: add new items here in the beginning of the list to display them ingame in the end of the dropdown!
 ICDT.trackableItemList = {
 	-- PVP
+	-- "Rewards For the Worthy"
 	["transmutRewardCyrodiil"] = {
 		name = ICDT.loc.items.transmutRewardCyrodiil,
 		itemIds = {134618},

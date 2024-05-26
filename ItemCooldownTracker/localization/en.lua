@@ -54,7 +54,7 @@ ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Kindred's Concord Style
 
 
 -- Settings
-ICDT.loc.settings.introDescription = "1. Select the item(s) you want to track/untrack from the dropdown list below.\n2. Click on the button to track or to untrack the selected item(s)\n3. When you collect a tracked item, the addon automatically logs the current time.\n4. A dialog will warn you if you try to open a container with active cooldown.\n5. Type '/ict' into the chat to see all cooldown times.\n\nFeel free to contact me if you want me to add another item(s) to the dropdown. (Comment/PM on ESOUI or Discord: DeadSoon#9951)"
+ICDT.loc.settings.introDescription = "1. Select the item(s) you want to track/untrack from the dropdown list below.\n2. Click on the button to track or to untrack the selected item(s)\n3. When you collect a tracked item, the addon automatically logs the current time.\n4. A dialog will warn you if you try to open a container with active cooldown.\n5. Type '/ict' into the chat to see all cooldown times.\n\nFeel free to contact me if you want me to add another item(s) to the dropdown. (Comment/PM on ESOUI or Discord: deadsoon_)"
 ICDT.loc.settings.itemsToTrack = "Select item(s) you want to track/untrack:"
 ICDT.loc.settings.itemsToTrackTooltip = "Select in the dropdown the item(s) you want to track or untrack via the buttons below."
 ICDT.loc.settings.trackSelected = "Track selected"
@@ -103,7 +103,7 @@ ICDT.loc.chat.cooldownActiveTime = "You have to wait %d hours and %d minutes!"
 ICDT.loc.dialogs.initialSetupBody = "Please be briefly informed how the addon works. By default, tracking is enabled for all supported items.\n\nConfirm this dialog to jump to the settings."
 ICDT.loc.dialogs.useItemBody1 = "Attention! The cooldown of the item is still active!"
 ICDT.loc.dialogs.useItemBody2 = "Do you really want to open this container?"
-ICDT.loc.dialogs.noServerResetTime = "WARNING: The addon cannot detect the server you are playing on. The daily reset time of the server is unknown. The tracking of items is not possible.\n\nPlease contact me via ingame mail (@DeadSoon), Discord (DeadSoon#9951) or ESOUI (@DeadSoon) and disable the addon until an update was released."
+ICDT.loc.dialogs.noServerResetTime = "WARNING: The addon cannot detect the server you are playing on. The daily reset time of the server is unknown. The tracking of items is not possible.\n\nPlease contact me via ingame mail (@DeadSoon), Discord (deadsoon_) or ESOUI (@DeadSoon) and disable the addon until an update was released."
 
 
 -- Universal
