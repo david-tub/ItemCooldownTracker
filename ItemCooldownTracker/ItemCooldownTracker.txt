@@ -1,10 +1,10 @@
 ## Title: |cd5b526Item|r Cooldown Tracker
 ## Description: Tracks automatically the cooldown of specific item drops. The user can add items to track in the settings menu of the addon and can check the cooldowns via chat command (/ict).
 ## Author: DeadSoon
-## APIVersion: 101040 101041
+## APIVersion: 101041 101042
 ## SavedVariables: ItemCooldownTracker_SV
-## Version: 4.3
-## AddOnVersion: 43
+## Version: 4.4
+## AddOnVersion: 44
 ## IsLibrary: false
 ## DependsOn: LibAddonMenu-2.0
 
