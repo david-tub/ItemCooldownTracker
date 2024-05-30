@@ -28,7 +28,7 @@ ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Konkordie der Sippe Sti
 
 
 -- Settings
-ICDT.loc.settings.introDescription = "1. Wähle im Dropdown das Item das du tracken möchtest aus.\n2. Nutze die Buttons um das jeweilige Item zu tracken oder nicht mehr zu tracken.\n3. Wenn du nun das entsprechende Item einsammelst, speichert das Addon automatisch die aktuelle Zeit\n4. Ein Dialog wird dich warnen, wenn du versuchst, einen Behälter mit aktivem Cooldown zu öffnen.\n5. Nutze den Chat-Befehl '/ict' um die Cooldowns deiner Items zu überprüfen.\n\nKontaktiere mich gerne wenn du möchtest, dass ein bestimmtes Item zur Dropdown-Liste hinzugefügt werden soll. (Kommentar/PM auf ESOUI oder Discord: DeadSoon#9951)"
+ICDT.loc.settings.introDescription = "1. Wähle im Dropdown das Item das du tracken möchtest aus.\n2. Nutze die Buttons um das jeweilige Item zu tracken oder nicht mehr zu tracken.\n3. Wenn du nun das entsprechende Item einsammelst, speichert das Addon automatisch die aktuelle Zeit\n4. Ein Dialog wird dich warnen, wenn du versuchst, einen Behälter mit aktivem Cooldown zu öffnen.\n5. Nutze den Chat-Befehl '/ict' um die Cooldowns deiner Items zu überprüfen.\n\nKontaktiere mich gerne wenn du möchtest, dass ein bestimmtes Item zur Dropdown-Liste hinzugefügt werden soll. (Kommentar/PM auf ESOUI oder Discord: deadsoon_)"
 ICDT.loc.settings.itemsToTrack = "Wähle das Element aus, dass getrackt werden soll:"
 ICDT.loc.settings.itemsToTrackTooltip = "Wähle im Dropdown das Element aus, das getrackt bzw. nicht getrackt werden soll."
 ICDT.loc.settings.trackSelected = "Track Ausgewähltes"
@@ -77,7 +77,7 @@ ICDT.loc.chat.cooldownActiveTime = "Du musst noch %d Stunden und %d Minuten wart
 ICDT.loc.dialogs.initialSetupBody = "Bitte lasse dich kurz informieren, wie das Addon funktioniert. Standardmäßig ist das Tracking für alle unterstützten Gegenstände aktiviert.\n\nBestätige diesen Dialog um zu den Einstellungen zu springen."
 ICDT.loc.dialogs.useItemBody1 = "Achtung! Cooldown des Items ist noch aktiv!"
 ICDT.loc.dialogs.useItemBody2 = "Willst du diesen Behälter wirklich öffnen?"
-ICDT.loc.dialogs.noServerResetTime = "ACHTUNG: Das Addon kann den Server, auf dem du spielst, nicht erkennen. Die tägliche Rückstellzeit des Servers ist unbekannt. Das Tracking von Gegenständen ist nicht möglich.\n\nBitte kontaktiere mich via Ingame-Nachricht (@DeadSoon), Discord (DeadSoon#9951) oder ESOUI (@DeadSoon) und deaktiviere das Addon bis ein Update verfügbar ist."
+ICDT.loc.dialogs.noServerResetTime = "ACHTUNG: Das Addon kann den Server, auf dem du spielst, nicht erkennen. Die tägliche Rückstellzeit des Servers ist unbekannt. Das Tracking von Gegenständen ist nicht möglich.\n\nBitte kontaktiere mich via Ingame-Nachricht (@DeadSoon), Discord (deadsoon_) oder ESOUI (@DeadSoon) und deaktiviere das Addon bis ein Update verfügbar ist."
 
 
 -- Universal
