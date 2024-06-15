@@ -22,6 +22,7 @@ ICDT.loc.prefix.deadlands = "10. Deadlands: "
 ICDT.loc.prefix.highIsle = "11. High Isle: "
 ICDT.loc.prefix.firesong = "12. Firesong: "
 ICDT.loc.prefix.necrom = "13. Necrom: "
+ICDT.loc.prefix.goldRoad = "14. Gold Road: "
 
 
 -- ENGLISH LANGUAGE LOCALIZATION
@@ -51,6 +52,7 @@ ICDT.loc.items.styleHouseMornard = ICDT.loc.prefix.firesong .. "House Mornard St
 ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Firesong Style Pages (Galen)"
 ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Dead Keeper Style Pages (Telvanni)"
 ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Kindred's Concord Style Pages (Telvanni)"
+ICDT.loc.items.styleShardBorn = ICDT.loc.prefix.goldRoad .. "Shardborn Style Pages (West Weald)"
 
 
 -- Settings
@@ -90,7 +92,8 @@ ICDT.loc.settings.itemDescriptionDetailed =
 		"Firesong: |cd5b526House Mornard Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Juline Courcelles' or 'Druid Gastoc' in Galen.\n\n" ..
 		"Firesong: |cd5b526Firesong Style Pages|r\nYou have a chance to receive a style page by completing the daily quest (volcanic vents) from the quest giver 'Druid Aishabeh' in Galen.\n\n" ..
 		"Necrom: |cd5b526Dead Keeper Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Ordinator Tilena' or 'Ordinator Nelyn' in Telvanni.\n\n" ..
-		"Necrom: |cd5b526Kindred's Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quest from the quest giver 'Ordinator Tandasea' in Telvanni. Also, the stype pages can drop from bosses in 'Bastion Nymic'.\n\n"
+		"Necrom: |cd5b526Kindred's Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quest from the quest giver 'Ordinator Tandasea' in Telvanni. Also, the stype pages can drop from bosses in 'Bastion Nymic'.\n\n" ..
+		"Gold Road: |cd5b526Shardborn Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Commandant Salerius' or 'Lieutenant Agrance' in West Weald.\n\n"
 
 
 -- Chat output

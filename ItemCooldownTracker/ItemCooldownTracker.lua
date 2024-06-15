@@ -335,6 +335,17 @@ ICDT.trackableItemList = {
 		},
 	},
 
+	-- Gold Road
+	["styleShardBorn"] = {
+		name = ICDT.loc.items.styleShardBorn,
+		itemIds = range(203361, 203374),
+		overwriteTimestamp = false,
+		containers = {207980, 207981},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+
 	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
 
 
