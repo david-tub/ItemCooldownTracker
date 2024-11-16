@@ -345,6 +345,15 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
+	["styleWestWealdLegion"] = {
+		name = ICDT.loc.items.styleWestWealdLegion,
+		itemIds = range(203474, 203487),
+		overwriteTimestamp = false,
+		containers = {207982},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
 
 	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
 
