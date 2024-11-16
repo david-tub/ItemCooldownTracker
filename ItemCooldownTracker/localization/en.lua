@@ -53,6 +53,7 @@ ICDT.loc.items.styleFiresong = ICDT.loc.prefix.firesong .. "Firesong Style Pages
 ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Dead Keeper Style Pages (Telvanni)"
 ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Kindred's Concord Style Pages (Telvanni)"
 ICDT.loc.items.styleShardBorn = ICDT.loc.prefix.goldRoad .. "Shardborn Style Pages (West Weald)"
+ICDT.loc.items.styleWestWealdLegion = ICDT.loc.prefix.goldRoad .. "West Weald Legion Style Pages (West Weald)"
 
 
 -- Settings
@@ -93,7 +94,8 @@ ICDT.loc.settings.itemDescriptionDetailed =
 		"Firesong: |cd5b526Firesong Style Pages|r\nYou have a chance to receive a style page by completing the daily quest (volcanic vents) from the quest giver 'Druid Aishabeh' in Galen.\n\n" ..
 		"Necrom: |cd5b526Dead Keeper Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Ordinator Tilena' or 'Ordinator Nelyn' in Telvanni.\n\n" ..
 		"Necrom: |cd5b526Kindred's Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quest from the quest giver 'Ordinator Tandasea' in Telvanni. Also, the stype pages can drop from bosses in 'Bastion Nymic'.\n\n" ..
-		"Gold Road: |cd5b526Shardborn Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Commandant Salerius' or 'Lieutenant Agrance' in West Weald.\n\n"
+		"Gold Road: |cd5b526Shardborn Concord Style Pages|r\nYou have a chance to receive a style page by completing the daily quests (delve or world boss) from the quest givers 'Commandant Salerius' or 'Lieutenant Agrance' in West Weald.\n\n" ..
+		"Gold Road: |cd5b526West Weald Legion Style Pages|r\nYou have a chance to receive a style page by completing the daily quest from the quest giver 'Legionairy Jaida' in West Weald.\n\n"
 
 
 -- Chat output

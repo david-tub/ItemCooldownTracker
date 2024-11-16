@@ -109,9 +109,9 @@ ICDT.trackableItemList = {
 	-- "Rewards For the Worthy"
 	["transmutRewardCyrodiil"] = {
 		name = ICDT.loc.items.transmutRewardCyrodiil,
-		itemIds = {134618},
+		itemIds = {211304},
 		overwriteTimestamp = false,
-		containers = {134619, 145577, 181436, 184171, 190009, 194353, 204404},
+		containers = {134619, 145577, 181436, 184171, 190009, 194353, 204404, 210866},
 		conditions = {
 			onlyFromContainer = true,
 		},
@@ -341,6 +341,15 @@ ICDT.trackableItemList = {
 		itemIds = range(203361, 203374),
 		overwriteTimestamp = false,
 		containers = {207980, 207981},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+	["styleWestWealdLegion"] = {
+		name = ICDT.loc.items.styleWestWealdLegion,
+		itemIds = range(203474, 203487),
+		overwriteTimestamp = false,
+		containers = {207982},
 		conditions = {
 			onlyFromContainer = true,
 		},
