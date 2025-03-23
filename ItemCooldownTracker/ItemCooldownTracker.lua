@@ -635,6 +635,7 @@ function ICDT.initializeSettingsMenu()
 			  setFunc = function(key) ICDT.currentItem = key end,
 			  default = nil,
 			  sort = "name-up",
+			  scrollable = true,
 			  reference = "ICDT_ItemsTrackList",
          },
 		 {
