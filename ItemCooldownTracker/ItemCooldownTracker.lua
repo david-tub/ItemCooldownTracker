@@ -1056,6 +1056,7 @@ function ICDT.primaryActionPreHook(inventorySlot)
 	local slotIndex = inventorySlot.dataEntry.data.slotIndex
 	if not bagId or not slotIndex then return false end
 	
+	local itemId = GetItemId(bagId, slotIndex)
 	local minutesLeft = ICDT.GetItemCooldown(itemId)
 	if minutesLeft > 0 then
 		-- cooldown is active -> show warning dialog
