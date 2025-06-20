@@ -27,6 +27,7 @@ ICDT.loc.items.styleDeadKeeper = ICDT.loc.prefix.necrom .. "Hüter der Toten Sti
 ICDT.loc.items.styleKindred = ICDT.loc.prefix.necrom .. "Konkordie der Sippe Stilseiten (Telvanni)"
 ICDT.loc.items.styleShardBorn = ICDT.loc.prefix.goldRoad .. "Scherbensaat Stilseiten (Westauen)"
 ICDT.loc.items.styleWestWealdLegion = ICDT.loc.prefix.goldRoad .. "Westauen-Legion Stilseiten (Westauen)"
+ICDT.loc.items.styleTideBorn = ICDT.loc.prefix.goldRoad .. "Gezeitengeborenen Stilseiten (Sonnenwende)"
 
 
 -- Settings
@@ -68,7 +69,8 @@ ICDT.loc.settings.itemDescriptionDetailed =
 		"Necrom: |cd5b526Hüter der Toten Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Ordinatorin Tilena' oder 'Ordinator Nelyn' auf Telvanni abschließt.\n\n" ..
 		"Necrom: |cd5b526Konkordie der Sippe Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest des Questgebers 'Ordinatorin Tandasea' auf Telvanni abschließt. Zusätzlich können die Stilseiten von Anführern in 'Bastion Nymon' droppen.\n\n" ..
 		"Gold Road: |cd5b526Scherbensaat Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Kommandant Salerius' oder 'Leutnant Agrance' in Westauen abschließt.\n\n" ..
-		"Gold Road: |cd5b526Westauen-Legion Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest der Questgeberin 'Legionärin Jaida' in Westauen abschließt.\n\n"
+		"Gold Road: |cd5b526Westauen-Legion Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die tägliche Quest der Questgeberin 'Legionärin Jaida' in Westauen abschließt.\n\n" ..
+		"Gold Road: |cd5b526Gezeitengeborenen Stilseiten|r\nDu hast die Chance, eine Stilseite zu erhalten, wenn du die täglichen Quests (Gewölbe oder Weltenboss) der Questgeber 'Lector Volonaro' oder 'Morlia' in Sonnenwende abschließt.\n\n"
 
 
 -- Chat output

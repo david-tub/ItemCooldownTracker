@@ -354,6 +354,15 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
+	["styleTideBorn"] = {
+		name = ICDT.loc.items.styleTideBorn,
+		itemIds = range(212119, 212132),
+		overwriteTimestamp = false,
+		containers = {217732},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
 
 	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
 
