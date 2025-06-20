@@ -510,6 +510,26 @@ ICDT.trackableItemList = {
 		},
 	},
 
+	-- Gold Road
+	-- Echo of the Abolisher_1 (same collectible but two different fragments)
+	["fragPdEchoAbolisher_1"] = {
+		name = ICDT.loc.prefix.goldRoad .. zo_strformat("<<C:1>>", GetCollectibleName(12444)) .. ICDT.loc.suffix.publicDungeonFragment .. " 1/2",
+		itemIds = {207814},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1467},
+		},
+	},
+	-- Echo of the Abolisher_2 (same collectible but two different fragments)
+	["fragPdEchoAbolisher_2"] = {
+		name = ICDT.loc.prefix.goldRoad .. zo_strformat("<<C:1>>", GetCollectibleName(12444)) .. ICDT.loc.suffix.publicDungeonFragment .. " 2/2",
+		itemIds = {207815},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1466},
+		},
+	},
+
 }
 
 
