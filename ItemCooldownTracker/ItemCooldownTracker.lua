@@ -354,6 +354,15 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
+	["styleTideBorn"] = {
+		name = ICDT.loc.items.styleTideBorn,
+		itemIds = range(212119, 212132),
+		overwriteTimestamp = false,
+		containers = {217732},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
 
 	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
 
@@ -498,6 +507,26 @@ ICDT.trackableItemList = {
 		overwriteTimestamp = false,
 		conditions = {
 			onlyInZone = {1416},
+		},
+	},
+
+	-- Gold Road
+	-- Echo of the Abolisher_1 (same collectible but two different fragments)
+	["fragPdEchoAbolisher_1"] = {
+		name = ICDT.loc.prefix.goldRoad .. zo_strformat("<<C:1>>", GetCollectibleName(12444)) .. ICDT.loc.suffix.publicDungeonFragment .. " 1/2",
+		itemIds = {207814},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1467},
+		},
+	},
+	-- Echo of the Abolisher_2 (same collectible but two different fragments)
+	["fragPdEchoAbolisher_2"] = {
+		name = ICDT.loc.prefix.goldRoad .. zo_strformat("<<C:1>>", GetCollectibleName(12444)) .. ICDT.loc.suffix.publicDungeonFragment .. " 2/2",
+		itemIds = {207815},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1466},
 		},
 	},
 
