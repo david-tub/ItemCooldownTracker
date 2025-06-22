@@ -358,7 +358,7 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.styleTideBorn,
 		itemIds = range(212119, 212132),
 		overwriteTimestamp = false,
-		containers = {217732},
+		containers = {217731, 217732},
 		conditions = {
 			onlyFromContainer = true,
 		},
