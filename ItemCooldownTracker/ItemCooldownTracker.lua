@@ -111,7 +111,7 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.transmutRewardCyrodiil,
 		itemIds = {211304},
 		overwriteTimestamp = false,
-		containers = {134619, 145577, 181436, 184171, 190009, 194353, 204404, 210866, 214239},
+		containers = {134619, 145577, 181436, 184171, 190009, 194353, 204404, 210866, 214239, 219651},
 		conditions = {
 			onlyFromContainer = true,
 		},
@@ -354,6 +354,8 @@ ICDT.trackableItemList = {
 			onlyFromContainer = true,
 		},
 	},
+
+	-- Seasons of the Worm Cult Part 1
 	["styleTideBorn"] = {
 		name = ICDT.loc.items.styleTideBorn,
 		itemIds = range(212119, 212132),
@@ -527,6 +529,17 @@ ICDT.trackableItemList = {
 		overwriteTimestamp = false,
 		conditions = {
 			onlyInZone = {1466},
+		},
+	},
+
+	-- Seasons of the Worm Cult Part 1
+	-- Eviscerate, Violet Purple
+	["fragEviVioletPurple"] = {
+		name = ICDT.loc.prefix.wormCult1 .. zo_strformat("<<C:1>>", GetCollectibleName(13792)) .. ICDT.loc.suffix.publicDungeonFragment,
+		itemIds = {217925},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {1514},
 		},
 	},
 
