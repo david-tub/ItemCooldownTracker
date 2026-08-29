@@ -320,7 +320,7 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.styleDeadKeeper,
 		itemIds = range(194514, 194527),
 		overwriteTimestamp = false,
-		containers = {197819},
+		containers = {197818, 197819},
 		conditions = {
 			onlyFromContainer = true,
 		},
@@ -329,7 +329,7 @@ ICDT.trackableItemList = {
 		name = ICDT.loc.items.styleKindred,
 		itemIds = range(194541, 194554),
 		overwriteTimestamp = false,
-		containers = {197818, 197820},
+		containers = {197820},
 		conditions = {
 			onlyFromContainer = true,	-- could also drop from bosses in Bastion Nymic (*)
 		},
