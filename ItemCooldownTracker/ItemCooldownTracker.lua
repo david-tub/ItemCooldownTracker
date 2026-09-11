@@ -554,6 +554,29 @@ ICDT.trackableItemList = {
 		},
 	},
 
+	-- OTHER TYPE OF FRAGMENTS
+
+	-- Season 1
+	-- Parched Stone
+	["fragParchedStone"] = {
+		name = ICDT.loc.prefix.season1 .. zo_strformat("<<C:1>>", GetCollectibleName(14400)) .. ICDT.loc.suffix.otherFragment,
+		itemIds = {225219},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {3},
+		},
+	},
+
+	-- Bitten Chew Bone
+	["fragChewBone"] = {
+		name = ICDT.loc.prefix.season1 .. zo_strformat("<<C:1>>", GetCollectibleName(14773)) .. ICDT.loc.suffix.otherFragment,
+		itemIds = {225220},
+		overwriteTimestamp = false,
+		conditions = {
+			onlyInZone = {41},
+		},
+	},
+
 }
 
 

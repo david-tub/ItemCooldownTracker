@@ -29,6 +29,7 @@ ICDT.loc.prefix.season1 = "16. Season 1: "
 
 -- ENGLISH LANGUAGE LOCALIZATION
 ICDT.loc.suffix.publicDungeonFragment = " (PD Fragment)"
+ICDT.loc.suffix.otherFragment = " (Fragment)"
 
 -- Items
 ICDT.loc.items.transmutRewardCyrodiil = ICDT.loc.prefix.pvp .. "Uncracked Transmutation Geode ('Rewards for the Worthy')"

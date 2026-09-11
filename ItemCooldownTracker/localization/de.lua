@@ -1,5 +1,6 @@
 -- GERMAN LANGUAGE LOCALIZATION
 ICDT.loc.suffix.publicDungeonFragment = " (OV Fragment)"
+ICDT.loc.suffix.otherFragment = " (Fragment)"
 
 -- Items
 ICDT.loc.items.transmutRewardCyrodiil = ICDT.loc.prefix.pvp .. "Intakte Transmutationsgeode ('Gerechter Lohn')"
