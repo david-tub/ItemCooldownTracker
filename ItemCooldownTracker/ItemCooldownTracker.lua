@@ -366,6 +366,17 @@ ICDT.trackableItemList = {
 		},
 	},
 
+	-- Season 1
+	["styleKoldaneCartel"] = {
+		name = ICDT.loc.items.styleKoldaneCartel,
+		itemIds = range(223948, 223961),
+		overwriteTimestamp = false,
+		containers = {225207},
+		conditions = {
+			onlyFromContainer = true,
+		},
+	},
+
 	-- * We assume that the drop from sources other than the specific container does not count for the cooldown. Furthermore, it is not trivial to detect a drop from a specific source (e.g. NPC or location).
 
 
